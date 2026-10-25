@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono, Inter } from "next/font/google"
+import { Geist_Mono, Inter } from "next/font/google"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -11,6 +11,11 @@ const fontMono = Geist_Mono({
   variable: "--font-mono",
 })
 
+export const metadata = {
+  title: "Simulab — Test simulation workspace",
+  description: "Build focused assessments from a flexible question bank.",
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -20,7 +25,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", inter.variable)}
+      className={cn("dark antialiased", fontMono.variable, "font-sans", inter.variable)}
     >
       <body>
         <ThemeProvider>{children}</ThemeProvider>
